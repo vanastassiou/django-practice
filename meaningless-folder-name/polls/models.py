@@ -2,7 +2,7 @@ from django.db import models
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200) # CharField class requires max_length
-    pub_Date = models.DateTimeField('date published') # First argument to a Field is a human-readable name
+    pub_date = models.DateTimeField('date published') # First argument to a Field is a human-readable name
 
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE) # Defines each instance of class Choice as necessarily related to an instance of class Question
