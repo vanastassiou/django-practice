@@ -1,0 +1,14 @@
+<!-- This file is polls/templates/polls/index.html, but because of Django convention, you only need to refer to it as polls/index.html.
+Django looks for a "templates" subdirectory in each of the INSTALLED_APPS in settings.py.
+Don't shortcut by just making polls/templates instead of polls/templates/polls/, because Django chooses the first template with the matching name.
+If a different app has the same template name, Django will always use that one first. -->
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
